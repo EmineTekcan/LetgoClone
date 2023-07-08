@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:"3%",
         gap:15,
         marginBottom:10,
-        backgroundColor:"#f2f2f2",
+        backgroundColor:"#F2F3F5",
         paddingVertical:"2%"
     },
     inputView: {
