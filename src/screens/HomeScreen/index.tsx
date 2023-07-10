@@ -8,7 +8,7 @@ import Products from '../../../assets/products'
 import CategoryFilter from '../../components/CategoryFilter'
 import Searchbar from '../../components/Searchbar'
 
-const index = () => {
+const HomeScreen = () => {
 
   const [products, setProducts] = useState<Product[]>([])
 
@@ -28,4 +28,4 @@ const index = () => {
   )
 }
 
-export default index
+export default HomeScreen

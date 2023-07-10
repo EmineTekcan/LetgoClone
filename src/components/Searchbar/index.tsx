@@ -3,8 +3,16 @@ import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../conts/constants';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-const index = () => {
+const SearchBar = () => {
+
+    const navigate=useNavigation();
+
+    const handleFilterScreen=()=>{
+        navigate.navigate("FilterScreen")
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.inputView}>
@@ -13,6 +21,7 @@ const index = () => {
                 style={{fontSize:14,fontWeight:"200",color:colors.gray}}
                     placeholder='Araba, telefon, bisiklet ve daha fazlası...'
                     placeholderTextColor={"#949494"}
+                  onSubmitEditing={handleFilterScreen}
                 />
             </View>
             <Ionicons name="notifications" size={22} color={colors.gray} />
@@ -20,4 +29,4 @@ const index = () => {
     )
 }
 
-export default index
+export default SearchBar

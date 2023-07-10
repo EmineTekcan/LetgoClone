@@ -7,7 +7,7 @@ import Products from '../../../assets/products';
 import { colors } from '../../conts/constants';
 import Favourite from '../Favourite'
 
-const index = () => {
+const FavouriteProducts = () => {
     const [products, setProducts] = useState<Product[]>([])
 
     useEffect(() => {
@@ -39,4 +39,4 @@ const index = () => {
     )
 }
 
-export default index
+export default FavouriteProducts

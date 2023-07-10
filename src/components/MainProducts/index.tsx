@@ -8,7 +8,7 @@ type mainProductsProps = {
     mainProducts: Product[]
 }
 
-const index = ({mainProducts}:mainProductsProps) => {
+const MainProducts = ({mainProducts}:mainProductsProps) => {
     return (
         <View style={styles.container}>
             <View>
@@ -25,4 +25,4 @@ const index = ({mainProducts}:mainProductsProps) => {
     )
 }
 
-export default index
+export default MainProducts

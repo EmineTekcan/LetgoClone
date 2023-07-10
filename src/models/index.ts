@@ -18,3 +18,8 @@ export declare class Category{
     readonly name: string;
     readonly src:any
 }
+
+export declare class Filterin{
+    readonly id:string;
+    readonly name:string;
+}

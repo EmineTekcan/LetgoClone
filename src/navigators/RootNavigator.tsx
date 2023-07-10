@@ -5,6 +5,7 @@ import { colors } from '../conts/constants';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import CustomTabBarButton from './CustomTabBarButton';
+import IlanlarimNavigator from './IlanlarimNavigator'
 
 const Tab = createBottomTabNavigator();
 
@@ -13,19 +14,20 @@ const RootNavigator = ({ }) => {
         <Tab.Navigator
             initialRouteName='Ana Sayfa'
             screenOptions={{
-                tabBarStyle:{
+                tabBarStyle: {
                     height: 60
                 },
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarActiveTintColor: colors.mainColor,
                 tabBarInactiveTintColor: "#959595",
-                tabBarLabelStyle:{
-                    marginBottom:6
+                tabBarLabelStyle: {
+                    marginBottom: 6
                 }
             }}
         >
             <Tab.Screen
+                key={"Ana Sayfa"}
                 name='Ana Sayfa'
                 component={HomeNavigator}
                 options={{
@@ -36,6 +38,7 @@ const RootNavigator = ({ }) => {
                 }}
             />
             <Tab.Screen
+                key={"Sohbetler"}
                 name='Sohbetler'
                 component={HomeNavigator}
                 options={{
@@ -46,6 +49,7 @@ const RootNavigator = ({ }) => {
                 }}
             />
             <Tab.Screen
+                key={"Sat"}
                 name='Sat'
                 component={HomeNavigator}
                 options={{
@@ -53,8 +57,9 @@ const RootNavigator = ({ }) => {
                 }}
             />
             <Tab.Screen
-                name='İlanlarım'
-                component={HomeNavigator}
+                key={"Ilanlarim"}
+                name='ILanlarim'
+                component={IlanlarimNavigator}
                 options={{
                     tabBarIcon: ({ focused, color }) => (
                         focused ? <Ionicons name="heart-sharp" size={24} color={colors.mainColor} /> :
@@ -63,6 +68,7 @@ const RootNavigator = ({ }) => {
                 }}
             />
             <Tab.Screen
+                key={"Hesap"}
                 name='Hesap'
                 component={HomeNavigator}
                 options={{

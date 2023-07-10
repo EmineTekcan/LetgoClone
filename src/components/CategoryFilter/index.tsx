@@ -5,7 +5,7 @@ import styles from './styles'
 import { Category } from '../../models'
 import { colors } from '../../conts/constants'
 
-const index = () => {
+const CategoryFilter = () => {
 
   const [categories, setCategories] = useState<Category[]>([])
 
@@ -41,4 +41,4 @@ const index = () => {
   )
 }
 
-export default index
+export default CategoryFilter

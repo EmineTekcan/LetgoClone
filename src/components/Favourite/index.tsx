@@ -9,7 +9,7 @@ type productProps = {
     type?: string
 }
 
-const index = ({ item, type }: productProps) => {
+const Favourite = ({ item, type }: productProps) => {
     return (
         <TouchableOpacity style={type == "main" ? styles.mainContainer : styles.container}>
             <View style={type == "main" ? styles.productMainView : styles.productView}>
@@ -32,4 +32,4 @@ const index = ({ item, type }: productProps) => {
     )
 }
 
-export default index
+export default Favourite
