@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Button, TouchableHighlight } from 'react-native'
 import React from 'react'
 import styles from './styles'
 import { Product } from '../../models'
@@ -8,16 +8,19 @@ type mainProductsProps = {
     mainProducts: Product[]
 }
 
-const MainProducts = ({mainProducts}:mainProductsProps) => {
+const MainProducts = ({ mainProducts }: mainProductsProps) => {
+
+
     return (
-        <View style={styles.container}>
+        <View
+            style={styles.container}>
             <View>
                 <Text style={styles.topicTitle}>Güncel İlanlar</Text>
             </View>
             <View style={styles.listContainer}>
                 {
-                    mainProducts.map((item:Product,index)=>(
-                        <Favourite item={item} key={index} type='main'  />
+                    mainProducts.map((item: Product, index) => (
+                        <Favourite item={item} key={index} type='main' />
                     ))
                 }
             </View>

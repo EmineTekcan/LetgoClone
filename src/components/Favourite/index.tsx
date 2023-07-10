@@ -1,8 +1,10 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native'
 import React from 'react'
 import { Product } from '../../models'
 import styles from './style'
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
+
 
 type productProps = {
     item: Product,
@@ -10,8 +12,17 @@ type productProps = {
 }
 
 const Favourite = ({ item, type }: productProps) => {
+
+    const navigation = useNavigation();
+
+    const handleProductDetailNavigate = () => {
+        navigation.navigate("ProductDetail", { product: item })
+    }
+
     return (
-        <TouchableOpacity style={type == "main" ? styles.mainContainer : styles.container}>
+        <Pressable
+            onPress={handleProductDetailNavigate}
+            style={type == "main" ? styles.mainContainer : styles.container}>
             <View style={type == "main" ? styles.productMainView : styles.productView}>
                 <Image
                     resizeMode='stretch'
@@ -28,7 +39,7 @@ const Favourite = ({ item, type }: productProps) => {
                     <AntDesign name="heart" size={28} color="white" />
                 </TouchableOpacity>
             </View>
-        </TouchableOpacity>
+        </Pressable>
     )
 }
 
