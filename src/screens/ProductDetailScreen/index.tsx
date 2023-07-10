@@ -4,7 +4,8 @@ import CustomHeader from '../../components/CustomHeader'
 import { Product } from '../../models'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import ImageCarousel from '../../components/ImageCarousel'
-
+import DetailTextBox from '../../components/DetailTextBox'
+import DetailTextComp from '../../components/DetailTextComp'
 
 const ProductDetailScreen = () => {
 
@@ -12,12 +13,14 @@ const ProductDetailScreen = () => {
   const { product } = route.params
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
 
       {/* Header section */}
       <CustomHeader />
       <ScrollView style={{ zIndex: -1 }}>
         <ImageCarousel images={product.images} />
+        <DetailTextBox product={product} />
+        <DetailTextComp title='Açıklama' description={product.description} />
       </ScrollView>
     </View>
   )
