@@ -7,13 +7,13 @@ const Stack = createStackNavigator();
 const İlanlarim = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Ilanlarim'
+      initialRouteName='İlanlarim'
       screenOptions={{
-        header: () => (<CustomHeader />)
+        header: () => (<CustomHeader ilanlarim={true} />)
       }}
     >
       <Stack.Screen
-        name='Ilanlarim'
+        name='İlanlarim'
         component={ILanlarim}
       />
     </Stack.Navigator>

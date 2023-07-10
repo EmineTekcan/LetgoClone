@@ -1,4 +1,4 @@
 export const colors={
-    mainColor:"#E93D51",
+    mainColor:"#FF3556",
     gray:"#767575"
 }
