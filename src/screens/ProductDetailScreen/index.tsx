@@ -6,6 +6,9 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import ImageCarousel from '../../components/ImageCarousel'
 import DetailTextBox from '../../components/DetailTextBox'
 import DetailTextComp from '../../components/DetailTextComp'
+import SellerComp from '../../components/SellerComp'
+import { colors } from '../../conts/constants'
+import Mapping from '../../components/Mapping'
 
 const ProductDetailScreen = () => {
 
@@ -21,6 +24,8 @@ const ProductDetailScreen = () => {
         <ImageCarousel images={product.images} />
         <DetailTextBox product={product} />
         <DetailTextComp title='Açıklama' description={product.description} />
+        <SellerComp />
+        <Mapping />
       </ScrollView>
     </View>
   )

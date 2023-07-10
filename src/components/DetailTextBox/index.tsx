@@ -19,7 +19,7 @@ const DetailTextBox = ({ product }: DetailTextBoxProps) => {
                 <Text style={{ fontSize: 16, fontWeight: "600" }}>{`₺ ${product.price}`}</Text>
                 <Ionicons name="heart-outline" size={24} color={colors.gray} />
             </View>
-            <Text style={{ color: colors.gray, marginVertical: "1%" }}>{product.name}</Text>
+            <Text style={{ color: colors.gray, marginVertical: "1.5%" }}>{product.name}</Text>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                 <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
                     <FontAwesome5 name="map-marker-alt" size={14} color={colors.gray} />

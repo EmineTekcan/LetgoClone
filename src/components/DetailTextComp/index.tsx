@@ -8,14 +8,18 @@ type DetailTextCompProps = {
         name: string,
         value: string
     }],
-    description?:string
+    description?: string
 }
 
-const DetailTextComp = ({desc,title,description}:DetailTextCompProps) => {
+const DetailTextComp = ({ desc, title, description }: DetailTextCompProps) => {
     return (
-        <View style={{ paddingHorizontal: "5%", paddingVertical: "2%",elevation:0.5,marginVertical:"4%"}}>
-            <Text style={{marginVertical:"2%"}}>{title}</Text>
-            <Text style={{fontSize:13,color:colors.gray}}>{description}</Text>
+        <View style={{
+            paddingHorizontal: "5%",
+            paddingVertical: "2%",
+            marginVertical: "4%",
+        }}>
+            <Text style={{ marginVertical: "2%" }}>{title}</Text>
+            <Text style={{ fontSize: 13, color: colors.gray }}>{description}</Text>
         </View>
     )
 }
