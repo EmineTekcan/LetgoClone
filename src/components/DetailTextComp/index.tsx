@@ -18,7 +18,7 @@ const DetailTextComp = ({ desc, title, description }: DetailTextCompProps) => {
             paddingVertical: "2%",
             marginVertical: "4%",
         }}>
-            <Text style={{ marginVertical: "2%" }}>{title}</Text>
+            <Text style={{ marginVertical: "2%",fontWeight:"bold",fontSize:16}}>{title}</Text>
             <Text style={{ fontSize: 13, color: colors.gray }}>{description}</Text>
         </View>
     )
