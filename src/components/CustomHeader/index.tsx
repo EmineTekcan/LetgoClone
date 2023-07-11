@@ -4,8 +4,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const CustomHeader = () => {
+
+    const navigation=useNavigation();
+
     return (
         <View
         >
@@ -13,8 +17,11 @@ const CustomHeader = () => {
                 colors={['black', 'rgba(255, 255, 255, 0.8)']}
                 style={styles.contentContainer}
             >
-                <View>
-                    <MaterialCommunityIcons name="arrow-left" size={30} color="white" />
+                <View
+                >
+                    <MaterialCommunityIcons
+                    onPress={()=>navigation.goBack()}
+                    name="arrow-left" size={30} color="white" />
                 </View>
                 <View style={styles.right}>
                     <Ionicons name="ios-share-social-sharp" size={24} color="white" />

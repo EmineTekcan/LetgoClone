@@ -1,15 +1,31 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen'
-import React from 'react'
-import { View } from 'react-native'
+import React, { useEffect, useLayoutEffect } from 'react'
+import { View, Text } from 'react-native'
 import CustomHeader from './CustomHeader';
 import CategoryFilterScreen from '../screens/CategoryFilterScreen'
 import ProductDetailScreen from '../screens/ProductDetailScreen';
+import { getFocusedRouteNameFromRoute, useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
 
-const HomeNavigator = () => {
+const HomeNavigator = ({ navigation, route }) => {
+
+  const tabHiddenRoutes = ["ProductDetail"];
+
+  React.useLayoutEffect(() => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+
+    if (tabHiddenRoutes.includes(routeName)) {
+      navigation.setOptions({
+        tabBarStyle: {
+          display: "none"
+        }
+      });
+    } else {
+    }
+  }, [navigation, route]);
 
   return (
     <Stack.Navigator
@@ -28,8 +44,9 @@ const HomeNavigator = () => {
       />
       <Stack.Screen
         options={{
-          headerShown: false
+          headerShown: false,
         }}
+
         name='ProductDetail'
         component={ProductDetailScreen}
       />

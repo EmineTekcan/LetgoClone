@@ -1,15 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeNavigator from './HomeNavigator';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { colors } from '../conts/constants';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import CustomTabBarButton from './CustomTabBarButton';
 import IlanlarimNavigator from './IlanlarimNavigator'
+import { Text } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
 const RootNavigator = ({ }) => {
+
     return (
         <Tab.Navigator
             initialRouteName='Ana Sayfa'
@@ -34,7 +37,8 @@ const RootNavigator = ({ }) => {
                     tabBarIcon: ({ focused, color }) => (
                         focused ? <MaterialIcons name="home-filled" size={24} color={colors.mainColor} /> :
                             <MaterialIcons name="home-filled" size={24} color="#979797" />
-                    )
+                    ),
+                
                 }}
             />
             <Tab.Screen
