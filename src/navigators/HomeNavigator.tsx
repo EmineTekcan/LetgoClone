@@ -24,6 +24,11 @@ const HomeNavigator = ({ navigation, route }) => {
         }
       });
     } else {
+      navigation.setOptions({
+        tabBarStyle: {
+          height: 60
+      },
+      });
     }
   }, [navigation, route]);
 

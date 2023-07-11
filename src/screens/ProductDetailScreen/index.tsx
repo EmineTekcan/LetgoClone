@@ -33,7 +33,14 @@ const ProductDetailScreen = () => {
         <Mapping />
         <İlanNoComp ilanNo={1656761757} />
       </ScrollView>
-      <View style={{ height: height * 0.1 ,flexDirection:"row",alignItems:"center",justifyContent:"space-around"}}>
+      <View
+        style={{
+          height: height * 0.08,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-around",
+
+        }}>
         <CustomButton title='Sohbet' func={() => { }} />
         <CustomButton title='Ara' func={() => { }} />
       </View>

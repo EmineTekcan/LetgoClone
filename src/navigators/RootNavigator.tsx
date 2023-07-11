@@ -8,6 +8,9 @@ import CustomTabBarButton from './CustomTabBarButton';
 import IlanlarimNavigator from './IlanlarimNavigator'
 import { Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
+import SohbetTopBar from './SohbetTopBar';
+import MessageStackNavigator from './MessageStackNavigator';
+import CustomHeader from './CustomHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,14 +41,19 @@ const RootNavigator = ({ }) => {
                         focused ? <MaterialIcons name="home-filled" size={24} color={colors.mainColor} /> :
                             <MaterialIcons name="home-filled" size={24} color="#979797" />
                     ),
-                
+
                 }}
             />
             <Tab.Screen
                 key={"Sohbetler"}
                 name='Sohbetler'
-                component={HomeNavigator}
+                component={MessageStackNavigator}
                 options={{
+                    headerShown: true,
+                    header: () => <CustomHeader />,
+                    headerStyle: {
+                        backgroundColor: "#F5F5F5"
+                    },
                     tabBarIcon: ({ focused, color }) => (
                         focused ? <Ionicons name="ios-chatbox-ellipses" size={24} color={colors.mainColor} /> :
                             <Ionicons name="ios-chatbox-ellipses" size={24} color="#979797" />
