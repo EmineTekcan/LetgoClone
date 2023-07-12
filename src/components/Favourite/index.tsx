@@ -8,15 +8,17 @@ import { useNavigation } from '@react-navigation/native'
 
 type productProps = {
     item: Product,
-    type?: string
+    type?: string,
+    location:any,
+    city:city
 }
 
-const Favourite = ({ item, type }: productProps) => {
+const Favourite = ({ item, type,location }: productProps) => {
 
     const navigation = useNavigation();
 
     const handleProductDetailNavigate = () => {
-        navigation.navigate("ProductDetail", { product: item })
+        navigation.navigate("ProductDetail", { product: item ,location:location})
     }
 
     return (

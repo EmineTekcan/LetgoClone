@@ -5,10 +5,12 @@ import { Product } from '../../models'
 import Favourite from '../Favourite'
 
 type mainProductsProps = {
-    mainProducts: Product[]
+    mainProducts: Product[],
+    location: any,
+    city:string
 }
 
-const MainProducts = ({ mainProducts }: mainProductsProps) => {
+const MainProducts = ({ mainProducts, location,city }: mainProductsProps) => {
 
 
     return (
@@ -20,7 +22,7 @@ const MainProducts = ({ mainProducts }: mainProductsProps) => {
             <View style={styles.listContainer}>
                 {
                     mainProducts.map((item: Product, index) => (
-                        <Favourite item={item} key={index} type='main' />
+                        <Favourite city={city} location={location} item={item} key={index} type='main' />
                     ))
                 }
             </View>

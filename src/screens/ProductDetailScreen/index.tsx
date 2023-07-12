@@ -17,7 +17,7 @@ const { height, width } = Dimensions.get("window")
 const ProductDetailScreen = () => {
 
   const route = useRoute();
-  const { product } = route.params
+  const { product, location } = route.params
 
 
   return (
@@ -30,7 +30,7 @@ const ProductDetailScreen = () => {
         <DetailTextBox product={product} />
         <DetailTextComp title='Açıklama' description={product.description} />
         <SellerComp />
-        <Mapping />
+        <Mapping location={location} />
         <İlanNoComp ilanNo={1656761757} />
       </ScrollView>
       <View

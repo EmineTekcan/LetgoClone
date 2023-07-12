@@ -11,6 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import SohbetTopBar from './SohbetTopBar';
 import MessageStackNavigator from './MessageStackNavigator';
 import CustomHeader from './CustomHeader';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -82,8 +83,10 @@ const RootNavigator = ({ }) => {
             <Tab.Screen
                 key={"Hesap"}
                 name='Hesap'
-                component={HomeNavigator}
+                component={ProfileScreen}
                 options={{
+                    headerShown: true,
+                    header: () => <CustomHeader />,
                     tabBarIcon: ({ focused, color }) => (
                         focused ? <Ionicons name="person" size={24} color={colors.mainColor} /> :
                             <Ionicons name="person" size={24} color="#979797" />
